@@ -4,7 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { RichText } from "@wordpress/block-editor";
+import { RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -21,12 +21,18 @@ export default function save( props ) {
 			<RichText.Content
 				tagName="h2"
 				value={ props.attributes.title }
-				style={{ color: props.attributes.titleColor }}
+				style={{
+					color: props.attributes.titleColor,
+					textAlign: props.attributes.textAlign
+				}}
 			/>
 			<RichText.Content
 				tagName="p"
 				value={ props.attributes.description }
-				style={{ color: props.attributes.descriptionColor }}
+				style={{
+					color: props.attributes.descriptionColor,
+					textAlign: props.attributes.textAlign
+				}}
 			/>
 		</div>
 	);

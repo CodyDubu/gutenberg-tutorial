@@ -66,6 +66,9 @@ registerBlockType( 'create-block/alecaddd-giveaway', {
 	},
 
 	attributes: {
+		textAlign: {
+			type: 'string'
+		},
 		title: {
 			type: 'string',
 			source: 'html',

@@ -223,7 +223,14 @@ function Edit(_ref) {
       setAttributes = _ref.setAttributes;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: className
-  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
+  }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["BlockControls"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["AlignmentToolbar"], {
+    value: attributes.textAlign,
+    onChange: function onChange(textAlign) {
+      return setAttributes({
+        textAlign: textAlign
+      });
+    }
+  })), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
     tagName: "h2",
     placeholder: "Giveaway Title",
     value: attributes.title,
@@ -233,7 +240,8 @@ function Edit(_ref) {
       });
     },
     style: {
-      color: attributes.titleColor
+      color: attributes.titleColor,
+      textAlign: attributes.textAlign
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"], {
     tagName: "p",
@@ -245,7 +253,8 @@ function Edit(_ref) {
       });
     },
     style: {
-      color: attributes.descriptionColor
+      color: attributes.descriptionColor,
+      textAlign: attributes.textAlign
     }
   }));
 }
@@ -347,6 +356,9 @@ Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__["registerBlockType"])('cre
     html: false
   },
   attributes: {
+    textAlign: {
+      type: 'string'
+    },
     title: {
       type: 'string',
       source: 'html',
@@ -455,13 +467,15 @@ function save(props) {
     tagName: "h2",
     value: props.attributes.title,
     style: {
-      color: props.attributes.titleColor
+      color: props.attributes.titleColor,
+      textAlign: props.attributes.textAlign
     }
   }), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__["RichText"].Content, {
     tagName: "p",
     value: props.attributes.description,
     style: {
-      color: props.attributes.descriptionColor
+      color: props.attributes.descriptionColor,
+      textAlign: props.attributes.textAlign
     }
   }));
 }
